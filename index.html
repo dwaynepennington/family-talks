@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFF6E9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Family Talks">
+<title>Family Talks</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF6E9; --ink:#2E2A3B; --ink-soft:#6B6478; --card:#fff;
+  --font-display:'Chillax','Nunito',system-ui,sans-serif;
+  --font-body:'Nunito',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--font-body)}
+body{min-height:100dvh;display:flex;flex-direction:column;
+  background:
+    radial-gradient(circle at 8% 10%,#FFE1C7 0 140px,transparent 141px),
+    radial-gradient(circle at 94% 88%,#DFF1FB 0 190px,transparent 191px),
+    var(--bg);
+  padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+header{text-align:center;padding:40px 20px 8px}
+.logo{width:64px;height:64px}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(40px,8vw,64px);margin:6px 0 4px;letter-spacing:-.01em}
+.sub{font-size:19px;font-weight:700;color:var(--ink-soft);margin:0}
+main{flex:1;display:grid;gap:22px;padding:28px 20px 12px;max-width:1080px;width:100%;margin:0 auto;
+  grid-template-columns:1fr}
+@media (min-width:720px){main{grid-template-columns:repeat(3,1fr);gap:26px;padding-top:36px}}
+.kid{position:relative;display:flex;flex-direction:column;align-items:center;text-decoration:none;color:inherit;
+  background:var(--card);border-radius:32px;padding:22px 18px 22px;overflow:hidden;
+  box-shadow:0 6px 0 rgba(46,42,59,.1),0 16px 30px rgba(46,42,59,.07);transition:transform .15s}
+.kid:active{transform:scale(.97)}
+@media (hover:hover){.kid:hover{transform:translateY(-4px)}}
+.kid::before{content:"";position:absolute;left:0;right:0;top:0;height:62%;background:var(--tint);border-radius:0 0 50% 50%/0 0 18% 18%}
+.kid img{position:relative;height:250px;width:auto;margin-top:4px;filter:drop-shadow(0 10px 10px rgba(46,42,59,.12));transition:transform .3s}
+@media (hover:hover){.kid:hover img{transform:rotate(-3deg) scale(1.03)}}
+.kid .info{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.kid h2{position:relative;font-family:var(--font-display);font-weight:700;font-size:34px;margin:14px 0 2px}
+.kid .say{position:relative;margin:0 0 16px;color:var(--ink-soft);font-weight:700;font-size:16px}
+.kid .go{position:relative;display:inline-block;background:var(--btn);color:#fff;font-family:var(--font-display);font-weight:600;
+  font-size:22px;padding:14px 34px;border-radius:999px;box-shadow:0 6px 0 var(--btn-shadow)}
+.isla{--tint:#FCE3EC;--btn:#F27BAA;--btn-shadow:#D25C8B}
+.kian{--tint:#DDEFFB;--btn:#4FB3E8;--btn-shadow:#2F8CC0}
+.luca{--tint:#DDEEE1;--btn:#5DA77B;--btn-shadow:#3F8259}
+@media (max-width:719px){
+  .kid{flex-direction:row;align-items:center;gap:14px;padding:14px 18px 14px 10px;text-align:left}
+  .kid::before{top:0;bottom:0;left:0;right:auto;width:42%;height:auto;border-radius:0 50% 50% 0/0 30% 30% 0}
+  .kid img{height:150px;margin:0}
+  .kid .info{display:flex;flex-direction:column;align-items:flex-start}
+  .kid h2{margin:0;font-size:30px}
+  .kid .say{margin:2px 0 10px}
+  .kid .go{font-size:19px;padding:11px 24px}
+}
+footer{max-width:760px;margin:10px auto 0;padding:10px 22px 34px;text-align:center;color:var(--ink-soft);font-size:16px;line-height:1.55}
+footer b{color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <svg class="logo" viewBox="0 0 120 120" fill="none" aria-label="Family Talks logo">
+    <path d="M20 22h80a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12H56l-22 18v-18H20A12 12 0 0 1 8 74V34a12 12 0 0 1 12-12Z" fill="#FF7A59"/>
+    <circle cx="40" cy="54" r="7" fill="#F27BAA"/><circle cx="60" cy="54" r="7" fill="#4FB3E8"/><circle cx="80" cy="54" r="7" fill="#5DA77B"/>
+  </svg>
+  <h1>Family Talks</h1>
+  <p class="sub">Who’s playing today?</p>
+</header>
+
+<main>
+  <a class="kid isla" href="https://dwaynepennington.github.io/isla-talks/">
+    <img src="img/isla.webp" alt="Cartoon Isla waving" width="375" height="900">
+    <div class="info"><h2>Isla</h2><p class="say">Isla Talks</p><span class="go">Play</span></div>
+  </a>
+  <a class="kid kian" href="https://dwaynepennington.github.io/kian-talks/">
+    <img src="img/kian.webp" alt="Cartoon Kian waving" width="377" height="900">
+    <div class="info"><h2>Kian</h2><p class="say">Kian Talks</p><span class="go">Play</span></div>
+  </a>
+  <a class="kid luca" href="https://dwaynepennington.github.io/luca-talks/">
+    <img src="img/luca.webp" alt="Cartoon Luca tipping his cowboy hat" width="494" height="900">
+    <div class="info"><h2>Luca</h2><p class="say">Luca Talks</p><span class="go">Play</span></div>
+  </a>
+</main>
+
+<footer>
+  <p><b>Tip:</b> open a child’s app, then tap Share and <b>Add to Home Screen</b> (on Android, open the ⋮ menu and choose <b>Add to Home screen</b>). It opens full screen like a regular app, with that child’s face as the icon.</p>
+</footer>
+</body>
+</html>
